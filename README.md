@@ -2,6 +2,10 @@
 - This is vending machine app built via Django (Python).
 - Simple operations include product selection, payment and validation.
 
+# Prerequisite
+### Docker
+- https://www.docker.com/products/docker-desktop/
+
 # Related screenshot
 
 ### Product selection
