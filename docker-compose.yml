@@ -1,0 +1,8 @@
+services:
+  vending_machine:
+    container_name: vending_machine
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app

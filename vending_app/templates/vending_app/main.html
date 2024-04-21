@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vending Machine</title>
+</head>
+<body>
+    <h1>Please select your drink</h1>
+
+    <form action="{% url 'checkout' %}" method="POST">
+      <ul>
+          <li><input type="radio" id="Cola" name="item" value="Cola">
+              <label for="Cola">Cola</label></li>
+          <li><input type="radio" id="Pepsi" name="item" value="Pepsi">
+              <label for="Pepsi">Pepsi</label></li>
+          <li><input type="radio" id="Sprite" name="item" value="Sprite">
+              <label for="Sprite">Sprite</label></li>
+      </ul>
+      {% csrf_token %}
+      <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>

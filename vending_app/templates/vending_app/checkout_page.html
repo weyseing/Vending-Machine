@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+</head>
+<body>
+    <h1>Checkout</h1>
+
+    <form action="{% url 'pay' %}" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="item">Item Name:</label>
+            <span id="item">{{ item }}</span> 
+            <input type="hidden" id="item" name="item" value="{{ item }}">
+        </div>
+        
+        <div>
+            <label for="item-price">Item Price:</label>
+            <span id="item-price">${{ price }}</span>
+        </div>
+        
+        <div>
+            <label for="payment_method">Payment Method:</label>
+            <select id="payment_method" name="payment_method">
+                <option value="cash">cash</option>
+                <option value="credit_card">Credit/Debit Card</option>
+                <option value="paypal">FPX</option>
+            </select>
+        </div>
+
+        <div id="container_cash_amt">
+            <label for="cash_amt">Cash amount:</label>
+            <input type="text" id="cash_amt" name="cash_amt" onkeypress="return /[0-9]/i.test(event.key)" placeholder="Enter cash amount">
+        </div>
+        
+        <button type="submit">Pay now</button>
+    </form>
+
+</body>
+
+<script src="{% static 'vending_app/checkout_page.js' %}"></script>
+
+
+</html>
