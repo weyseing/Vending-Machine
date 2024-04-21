@@ -5,6 +5,7 @@
 # Prerequisite
 ### Docker
 - https://www.docker.com/products/docker-desktop/
+> ![alt text](static_global/readme/docker.png)
 
 # Related screenshot
 
